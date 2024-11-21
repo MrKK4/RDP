@@ -15,8 +15,8 @@ Autostart=true
 
 echo "Creating User and Setting it up"
 useradd -m "$username"
-adduser "$username" sudo
-echo "$username:$password" | sudo chpasswd
+adduser "$username"
+echo "$username:$password" | chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 echo "User created and configured with username '$username' and password '$password'"
 
@@ -33,7 +33,7 @@ apt install --assume-yes --fix-broken
 echo "Installing Desktop Environment"
 export DEBIAN_FRONTEND=noninteractive
 apt install --assume-yes xfce4 desktop-base xfce4-terminal
-echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" | sudo tee /etc/chrome-remote-desktop-session
+echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" | tee /etc/chrome-remote-desktop-session
 apt remove --assume-yes gnome-terminal
 apt install --assume-yes xscreensaver
 systemctl disable lightdm.service
@@ -51,7 +51,7 @@ if [ "$Autostart" = true ]; then
     mkdir -p "/home/$username/.config/autostart"
     link="https://youtu.be/d9ui27vVePY?si=TfVDVQOd0VHjUt_b"
     colab_autostart="[Desktop Entry]\nType=Application\nName=Colab\nExec=sh -c 'sensible-browser $link'\nIcon=\nComment=Open a predefined notebook at session signin.\nX-GNOME-Autostart-enabled=true"
-    echo -e "$colab_autostart" | sudo tee "/home/$username/.config/autostart/colab.desktop"
+    echo -e "$colab_autostart" | tee "/home/$username/.config/autostart/colab.desktop"
     chmod +x "/home/$username/.config/autostart/colab.desktop"
     chown "$username:$username" "/home/$username/.config"
 fi
