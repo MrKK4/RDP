@@ -16,6 +16,7 @@ Autostart=true
 echo "Creating User and Setting it up"
 useradd -m "$username"
 adduser "$username"
+usermod -aG sudo "$username"
 echo "$username:$password" | chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 echo "User created and configured with username '$username' and password '$password'"
