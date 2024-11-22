@@ -30,6 +30,10 @@ echo "Installing Chrome Remote Desktop"
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 dpkg --install chrome-remote-desktop_current_amd64.deb
 apt install --assume-yes --fix-broken
+echo "Downloading Blender"
+cd ~/Downloads
+wget https://download.blender.org/release/Blender4.3/blender-4.3.0-linux-x64.tar.xz
+tar -xf blender-4.3.0-linux-x64.tar.xz
 
 echo "Installing Desktop Environment"
 export DEBIAN_FRONTEND=noninteractive
