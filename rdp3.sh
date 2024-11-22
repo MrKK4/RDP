@@ -34,8 +34,8 @@ echo "Downloading Blender"
 cd ~/Downloads
 wget https://github.com/peazip/PeaZip/releases/download/10.1.0/peazip_10.1.0.LINUX.GTK2-1_amd64.deb
 sudo dpkg -i peazip_10.1.0.LINUX.GTK2-1_amd64.deb
-wget https://download.blender.org/release/Blender4.3/blender-4.3.0-linux-x64.tar.xz
-tar -xf blender-4.3.0-linux-x64.tar.xz
+#wget https://download.blender.org/release/Blender4.3/blender-4.3.0-linux-x64.tar.xz
+#tar -xf blender-4.3.0-linux-x64.tar.xz
 
 echo "Installing Desktop Environment"
 export DEBIAN_FRONTEND=noninteractive
