@@ -23,7 +23,7 @@ echo "User created and configured with username '$username' and password '$passw
 
 echo "Installing necessary packages"
 apt update
-apt install -y xfce4 desktop-base xfce4-terminal tightvncserver wget sudo
+apt install -y xfce4 desktop-base xfce4-terminal tightvncserver wget sudo nano
 
 echo "Setting up Chrome Remote Desktop"
 echo "Installing Chrome Remote Desktop"
